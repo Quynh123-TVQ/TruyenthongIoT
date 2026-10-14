@@ -1,0 +1,48 @@
+esphome:
+  name: hihi
+  friendly_name: hihi
+
+esp32:
+  board: esp32-s3-devkitc-1
+  flash_size: 8MB
+  framework:
+    type: arduino
+
+logger:
+
+api:
+
+ota:
+  - platform: esphome
+
+wifi:
+  ssid: TVQQ
+  password: "123456789"
+  ap:
+    ssid: "hihi Fallback Hotspot"
+    password: "7tQ9FLwnGfrl"
+
+captive_portal:
+
+web_server:
+
+light:
+  - platform: esp32_rmt_led_strip
+    name: "Đèn LED RGB"
+    id: onboard_rgb_led
+    pin: GPIO48
+    num_leds: 1
+    chipset: WS2812
+    rgb_order: GRB
+    effects:
+      - strobe:
+          name: "Nhấp nháy chớp tắt (Strobe)"
+          colors:
+            - state: true
+              duration: 500ms
+            - state: false
+              duration: 500ms
+      - pulse:
+          name: "Nhấp nháy nhịp thở (Pulse)"
+          transition_length: 1000ms
+          update_interval: 1000ms
