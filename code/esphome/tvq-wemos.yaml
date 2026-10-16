@@ -1,0 +1,32 @@
+esphome:
+  name: tvq-wemos
+  friendly_name: TVQ Wemos
+esp8266:
+  board: d1_mini
+logger:
+api:
+  encryption:
+    key: !secret api_key
+ota:
+  - platform: esphome
+    password: !secret ota_password
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: TVQ-Recovery
+    password: !secret fallback_password
+captive_portal:
+web_server:
+  port: 80
+output:
+  - platform: gpio
+    pin:
+      number: GPIO2
+      inverted: true
+    id: tvq_led_pin
+light:
+  - platform: binary
+    name: TVQ LED
+    id: tvq_led
+    output: tvq_led_pin

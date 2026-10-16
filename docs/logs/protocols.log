@@ -1,0 +1,27 @@
+test_block2_all_2048 (test_protocols.Coap.test_block2_all_2048) ... RX 50495 type= 2 bytes= 256
+RX 50496 type= 2 bytes= 256
+RX 50497 type= 2 bytes= 256
+RX 50498 type= 2 bytes= 256
+RX 50499 type= 2 bytes= 256
+RX 50500 type= 2 bytes= 256
+RX 50501 type= 2 bytes= 256
+RX 50502 type= 2 bytes= 256
+ok
+test_con_non (test_protocols.Coap.test_con_non) ... complete= 2048 sha256= 3332c0e3907197cc480ce46dacf74dc38ef2085658546aa6e64e1925e1d5df37
+RX 35599 type= 2 bytes= 28
+RX 100 type= 1 bytes= 28
+ok
+test_lost_response_retries (test_protocols.Coap.test_lost_response_retries) ... timeout/retry 1
+RX 18007 type= 2 bytes= 28
+ok
+test_observe_and_cancel (test_protocols.Coap.test_observe_and_cancel) ... RX 64842 type= 2 bytes= 28
+RX 64843 type= 2 bytes= 30
+ok
+test_time_units_and_stats (test_protocols.Flow.test_time_units_and_stats) ... ok
+test_duplicate_tamper_expiry_and_restart (test_protocols.Security.test_duplicate_tamper_expiry_and_restart) ... ok
+test_schema (test_protocols.Security.test_schema) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 5.073s
+
+OK

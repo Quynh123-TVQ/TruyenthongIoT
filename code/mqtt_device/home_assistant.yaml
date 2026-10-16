@@ -1,0 +1,22 @@
+# Merge under the existing mqtt: key in configuration.yaml; do not duplicate mqtt:.
+mqtt:
+  sensor:
+    - name: TVQ Temperature Demo
+      state_topic: tvq/lab12/sensor
+      value_template: "{{ value_json.temp }}"
+      unit_of_measurement: "°C"
+    - name: TVQ Humidity Demo
+      state_topic: tvq/lab12/sensor
+      value_template: "{{ value_json.hum }}"
+      unit_of_measurement: "%"
+  switch:
+    - name: TVQ MQTT LED
+      command_topic: tvq/lab12/cmd
+      state_topic: tvq/lab12/state
+      availability_topic: tvq/lab12/availability
+      payload_available: ONLINE
+      payload_not_available: OFFLINE
+      payload_on: ON
+      payload_off: OFF
+      retain: false
+      optimistic: false
