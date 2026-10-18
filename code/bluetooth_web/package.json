@@ -1,1 +1,0 @@
-{"name":"tvq-serial-console","version":"1.0.0","private":true,"scripts":{"start":"node server.cjs"},"dependencies":{"serialport":"^13.0.0","ws":"^8.18.0"}}

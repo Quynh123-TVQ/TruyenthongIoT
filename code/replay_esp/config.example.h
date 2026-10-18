@@ -1,9 +1,0 @@
-#pragma once
-#define WIFI_SSID "CHANGE_ME"
-#define WIFI_PASS "CHANGE_ME"
-#define MQTT_HOST "192.168.27.10"
-#define MQTT_USER "tvq"
-#define MQTT_PASS "CHANGE_ME"
-#define LED_PIN 4
-#define VULNERABLE_MODE 0
-#define HMAC_KEY "CHANGE_ME_TO_RANDOM_SECRET_AT_LEAST_32_CHARACTERS"
