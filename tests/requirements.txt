@@ -1,3 +1,0 @@
-paho-mqtt==2.1.0
-amqtt==0.12.1
-websockets==15.0.1
