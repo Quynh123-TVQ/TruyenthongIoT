@@ -1,8 +1,0 @@
-tvq/lab12/availability ONLINE retain= True
-tvq/lab12/state OFF retain= True
-tvq/lab12/availability OFFLINE retain= True
-tvq/lab12/state ON retain= True
-PASS new subscriber received retained OFF
-PASS cmd ON -> state ON
-PASS abrupt disconnect -> LWT OFFLINE
-PASS bounded publisher completed

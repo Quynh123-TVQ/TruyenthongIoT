@@ -1,4 +1,0 @@
-PASS web HTML served UTF-8
-PASS HTTP -> Serial ON newline -> WebSocket ACK
-PASS Serial JSON -> WebSocket numeric telemetry
-PASS disconnect API
