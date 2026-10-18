@@ -1,0 +1,32 @@
+# Paste as ONE automation in Home Assistant's YAML editor.
+# Replace light.den_thuc_hanh with your actual LIGHT entity.
+alias: TH6 - Cube VTT dieu khien den
+description: Mat 6 bat den, mat 5 tat den; chi nhan su kien Cube.
+triggers:
+  - trigger: mqtt
+    topic: zigbee2mqtt/VTT
+conditions:
+  - condition: template
+    value_template: >-
+      {{ trigger.payload_json is defined
+         and trigger.payload_json is mapping
+         and trigger.payload_json.get('action') in ['side_up', 'flip_to_side']
+         and (trigger.payload_json.get('side') | int(-1)) in [5, 6] }}
+actions:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload_json.get('side') | int(-1) == 6 }}"
+        sequence:
+          - action: light.turn_on
+            target:
+              entity_id: light.den_thuc_hanh
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload_json.get('side') | int(-1) == 5 }}"
+        sequence:
+          - action: light.turn_off
+            target:
+              entity_id: light.den_thuc_hanh
+mode: queued
+max: 10
